@@ -25,11 +25,22 @@ if (path == '/src/index.html') {
   allNavLinks[0].style.fontWeight = "700"; 
 } else if (path == '/src/SoftwareEngAndAppDev/index.html') {
   allNavLinks[1].style.fontWeight = "700";
-  // FIXME: Paths only correct from index.html, not any of the other index files
+  allNavLinks[0].setAttribute('href', '../index.html');
+  allNavLinks[1].setAttribute('href', 'index.html');
+  allNavLinks[2].setAttribute('href', '../CybersecurityAndNetworking/index.html');
+  allNavLinks[3].setAttribute('href', '../Blog/index.html');
 } else if (path == '/src/CybersecurityAndNetworking/index.html') {
   allNavLinks[2].style.fontWeight = "700"; 
+  allNavLinks[0].setAttribute('href', '../index.html');
+  allNavLinks[1].setAttribute('href', '../SoftwareEngAndAppDev/index.html');
+  allNavLinks[2].setAttribute('href', 'index.html');
+  allNavLinks[3].setAttribute('href', '../Blog/index.html');
 } else if (path == '/src/Blog/index.html') {
-  allNavLinks[3].style.fontWeight = "700"; 
+  allNavLinks[3].style.fontWeight = "700";
+  allNavLinks[0].setAttribute('href', '../index.html');
+  allNavLinks[1].setAttribute('href', '../SoftwareEngAndAppDev/index.html');
+  allNavLinks[2].setAttribute('href', '../CybersecurityAndNetworking/index.html');
+  allNavLinks[3].setAttribute('href', 'index.html');
 }
 
 

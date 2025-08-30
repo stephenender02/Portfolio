@@ -48,7 +48,7 @@ p {
 
 body {
   min-height: 100vh;
-  background-image: linear-gradient(black, var(--primary-dark));
+  background-image: linear-gradient(#061134, #061134, var(--primary-dark));
   background-repeat: no-repeat;
   background-attachment: fixed;
   display: flex;
