@@ -172,3 +172,82 @@ footer {
 svg {
   width: 40px;
 }
+
+article {
+  margin: 100px 2em;
+  padding: 20px;
+  /* Frosted glass */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#profile {
+  width: 75vw;
+  display: grid;
+  grid-template:
+    "profPic name name name"
+    "profPic job job job"
+    "profPic social social resume";
+  row-gap: 20px;
+}
+
+#profileImage {
+  grid-area: profPic;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%; 
+  overflow: hidden; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
+
+#profileName {
+  grid-area: name;
+  font-size: 3em;
+  font-weight: var(--font-bold);
+}
+
+#profileJob {
+  grid-area: job;
+}
+
+#profSocial {
+  grid-area: social;
+  display: flex;
+  justify-content: space-around;
+}
+
+#profSocial a {
+  color: var(--text-light);
+}
+
+#profSocial a:hover {
+  color: var(--primary);
+}
+
+#profResume {
+  text-align: center;
+  grid-area: resume;
+  border: solid;
+  border-color: var(--primary);
+  border-radius: 20px;
+  background-color: var(--primary);
+  text-decoration: none;
+  color: var(--text-light);
+}
+
+#profResume:hover {
+  border-color: var(--primary-dark);
+  background-color: var(--primary-dark);
+}
+
+#profileImage img {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
