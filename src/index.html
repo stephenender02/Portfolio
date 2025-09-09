@@ -13,10 +13,14 @@
   <main>
     <article id="profile">
       <div id="profileImage">
-        <img src="images/profilePic.jpeg" alt="Stephen Ender Profile Picture">
+        <div id="profileImagePic">
+          <img src="images/profilePic.jpeg" alt="Stephen Ender Profile Picture">
+        </div>
       </div>
-      <p id="profileName">Stephen Ender</p>
-      <p id="profileJob">Software Development</p>
+      <div id="profileInfoBox">
+        <p id="profileName">Stephen Ender</p>
+        <p id="profileJob">Software Development and Cybersecurity</p>
+      </div>
       <div id="profSocial">
         <a href="https://www.linkedin.com/in/stephen-ender/" target="_blank">
           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
@@ -29,8 +33,90 @@
           </svg>
         </a>
       </div>
-      <a id="profResume" href="files/StephenEnder2025.pdf" download>Download Resume</a>
+      <div id="profResume">
+        <a id="downloadResume" href="files/StephenEnder2025.pdf" download>Download Resume</a>
+      </div>
     </article>
+
+    <article id="aboutMe">
+      <h1 class="articTitle">About Me</h1>
+      <p>Hi, I'm Stephen! I am a computer scientist particularly interested in the fields of cybersecurity, software development, and computer networking. I studied at James Madison University, where I've received my Bachelor of Science in Computer Science. When I'm not at the keyboard, I enjoy playing the saxophone and the guitar, watching the Dukes play football and basketball, and trying to cook new recipes in the kitchen! </p>
+    </article>
+
+    <article id="education">
+      <h1 class="articTitle">My Education</h1>
+      <h2>James Madison University</h2>
+      <div id="educationGrid">
+        <div id="eduPicArea">
+          <img src="images/jmuSummer.jpg" alt="James Madison University Campus">
+        </div>
+        <div id="eduDetailsArea">
+          <p>I graduated from James Madison University in May of 2025. Studying with a <strong>major in Computer Science</strong> and a <strong>minor in Computational Analytics</strong>, I have taken electives in Cyber Defense, Cryptography, Information Security, Computer Networking, and Application Development. Through the JMU Department of Computer Science, I have recieved the <em>NSTISSI No. 4011 Certification for Information Systems Security Professionals</em>.</p>
+        </div>
+        <div id="communityInvolvementArea">
+          <h2>Leadership and Community Involvement</h2>
+          <div id="communityInvolvementCards">
+            <div id="pmaCard" class="involvementCard">
+              <img src="images/pma.jpg" alt="Photo of Stephen Ender with Brothers of PMA">
+              <div class="cardContainer">
+                <p>Phi Mu Alpha Sinfonia</p>
+                <div class="cardExpand">
+                  <p>In the Fall of 2022, I became a brother of the music fraternity Phi Mu Alpha Sinfonia (PMA). In PMA, I was the secretary for the Gamma Alpha chapter for the 2024-2025 school year. In this role, I managed the organization of chapter resources, recorded minutes for meetings, and facilitated communication between our chapter and province leadership.</p>
+                </div>
+              </div>
+            </div>
+            <div id="mrdCard" class="involvementCard">
+              <img src="images/mrd.jpg" alt="Photo of Stephen Ender marching with a saxophone">
+              <div class="cardContainer">
+                <p>Marching Royal Dukes</p>
+                <div class="cardExpand">
+                  <p>From 2021-2023, I marched the alto saxophone in the JMU Marching Royal Dukes! In 2023 I had the opportunity to play at the Vatican for the Pope in the Rome New Year's Day Parade!</p>
+                </div> 
+              </div>
+            </div>
+            <div id="pepCard" class="involvementCard">
+              <img src="images/pep.JPG" alt="Photo of Stephen Ender with JMU Pep Band at Sun Belt Basketball Tournament">
+              <div class="cardContainer">
+                <p>JMU Pep Band</p>
+                <div class="cardExpand">
+                  <p>From 2021-2025, I played the alto saxophone in the JMU Pep Band! I have traveled with the Pep Band to Sun Belt Conference Championships and the NCAA tournament!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="experience">
+      <h1 class="articTitle">My Experience</h1>
+      <div id="experienceGrid">
+        <div id="fastCard" class="expCard">
+          <img src="images/fastLogo.jpg" alt="FAST Enterprises Logo">
+          <div class="expCardTitle">
+            <p>Implementation Consultent</p>
+            <p>FAST Enterprises</p>
+          </div>
+          <div class="expCardDet">
+            <p>I will be statring my new hire orientation with FAST in the coming weeks, after which I have been assigned to FAST's "Newbie University" short term placement. More details to come soon!</p>
+          </div>
+          <p>September 2025 - Present</p>
+        </div>
+        <div id="sluhnCard" class="expCard">
+          <img src="images/sluhnLogo.jpg" alt="St. Luke's University Health Network Logo">
+          <div class="expCardTitle">
+            <p>Information Technology Intern</p>
+            <p>St. Luke's University Health Network</p>
+          </div>
+          <div class="expCardDet">
+            <p>During my internships with St. Luke's, I responded to cyber security incidents, planned, executed, and presented results of phishing attack simulation training, prepared Disaster Recovery after action reports, and investigated threats by writing KQL queries with Microsoft Defender XDR Advanced Hunting</p>
+          </div>
+          <p>May 2022 - August 2022; June 2024 - August 2024</p>
+        </div>
+      </div>
+    </article>
+
   </main>
+  <script src="scripts/overviewJmuCardsScript.js"></script>
 </body>
 </html>

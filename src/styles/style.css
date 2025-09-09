@@ -27,6 +27,7 @@
 }
 
 h1, h2, h3, p {
+  color: var(--text-light);
   font-family: var(--body-font);
   margin: 0;
 }
@@ -83,7 +84,6 @@ header {
   font-weight: var(--font-bold);
 }
 
-
 nav {
   flex-basis: 80%;
 }
@@ -121,7 +121,6 @@ footer {
   display: grid;
   row-gap: 20px;
   grid-template-columns: repeat(3, 1fr);
-  position: fixed;
   bottom: 0;
   width: 90vw;
   margin-bottom: 20px;
@@ -163,6 +162,7 @@ footer {
 
 .socialsBox a {
   margin-right: 15px;
+  transition: 0.3s;
 }
 
 .socialsBox a:hover {
@@ -173,8 +173,15 @@ svg {
   width: 40px;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 article {
-  margin: 100px 2em;
+  width: 75vw;
+  margin: 3em 2em;
   padding: 20px;
   /* Frosted glass */
   background: rgba(255, 255, 255, 0.2);
@@ -186,44 +193,55 @@ article {
 }
 
 #profile {
-  width: 75vw;
   display: grid;
   grid-template:
-    "profPic name name name"
-    "profPic job job job"
-    "profPic social social resume";
-  row-gap: 20px;
+    "profPic name name"
+    "profPic social resume";
+  row-gap: 30px;
 }
 
 #profileImage {
   grid-area: profPic;
-  width: 150px;
-  height: 150px;
-  border-radius: 100%; 
-  overflow: hidden; 
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
-#profileName {
+#profileImagePic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#profileInfoBox {
   grid-area: name;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#profileName {
   font-size: 3em;
   font-weight: var(--font-bold);
 }
 
 #profileJob {
-  grid-area: job;
+  font-size: 1.5em;
+  font-weight: var(--font-light);
 }
 
 #profSocial {
   grid-area: social;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
 }
 
 #profSocial a {
+  margin: 0px 15px;
   color: var(--text-light);
+  transition: 0.3s;
 }
 
 #profSocial a:hover {
@@ -231,17 +249,27 @@ article {
 }
 
 #profResume {
-  text-align: center;
   grid-area: resume;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#downloadResume {
+  padding: 10px 15px;
   border: solid;
   border-color: var(--primary);
   border-radius: 20px;
   background-color: var(--primary);
   text-decoration: none;
   color: var(--text-light);
+  font-family: var(--body-font);
+  font-weight: var(--font-medium);
+  font-size: var(--normal-font-size);
+  transition: 0.3s;
 }
 
-#profResume:hover {
+#downloadResume:hover {
   border-color: var(--primary-dark);
   background-color: var(--primary-dark);
 }
@@ -250,4 +278,168 @@ article {
   width: 100%; 
   height: 100%; 
   object-fit: cover; 
+}
+
+@media screen and (max-width: 1000px) {
+  #profile {
+    grid-template:
+      "profPic profPic"
+      "name name"
+      "social resume";
+    row-gap: 15px;
+  }
+  #profileInfoBox {
+    margin-bottom: 30px;
+  }
+}
+
+#aboutMe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.articTitle {
+  margin-bottom: 30px;
+}
+
+#education {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#education h2 {
+  margin-bottom: 15px;
+}
+
+#educationGrid {
+  display: grid;
+  grid-template: 
+    "eduPic eduDetails eduDetails"
+    "communityInvolvement communityInvolvement communityInvolvement";
+  row-gap: 15px;
+  grid-template-columns: 1fr 2fr;
+}
+
+#eduPicArea {
+  grid-area: eduPic;
+}
+
+#eduPicArea img {
+  width: 25em;
+}
+
+#eduDetailsArea {
+  grid-area: eduDetails;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+}
+
+#communityInvolvementArea {
+  grid-area: communityInvolvement;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#communityInvolvementCards {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.involvementCard {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  transition: 0.3s;
+}
+
+.involvementCard:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+  cursor: pointer;
+}
+
+.involvementCard img{
+  width: 10em;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2px 16px;
+}
+
+.cardContainer > p:first-of-type {
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-bold);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.cardExpand {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.75s ease;
+}
+
+.involvementCard.active .cardExpand {
+  max-height: 1000px;
+}
+
+#experience {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#experienceGrid {
+  display: grid;
+  grid-template: 
+    "fast sluhn";
+  column-gap: 5em;
+}
+
+.expCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  transition: 0.3s;
+  padding: 2px 16px;
+}
+
+.expCardTitle {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.expCardTitle > p:first-of-type {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-bold);
+}
+
+.expCard img {
+  width: 10em;
+}
+
+.expCardDet {
+  margin-bottom: 15px;
+}
+
+#fastCard {
+  grid-area: fast;
+}
+
+#sluhnCard {
+  grid-area: sluhn;
 }
