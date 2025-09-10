@@ -45,11 +45,16 @@ h1 {
 p {
   font-weight: var(--font-medium);
   color: var(--text-light);
+  font-size: var(--normal-font-size);
+}
+
+a {
+  font-size: var(--normal-font-size);
 }
 
 body {
   min-height: 100vh;
-  background-image: linear-gradient(#061134, #061134, var(--primary-dark));
+  background-image: linear-gradient(#061134, #061134, #061134, var(--primary-dark));
   background-repeat: no-repeat;
   background-attachment: fixed;
   display: flex;
@@ -57,6 +62,7 @@ body {
   align-items: center;
 }
 
+/* Header and Navigation */
 header {
   display: flex;
   align-items: center;
@@ -117,9 +123,81 @@ nav {
   background-size: 100% 2px;
 }
 
+#mobileNavButton {
+  background: none;
+  border: none;
+  padding: 0px;
+  color: var(--text-light);
+  display: none;
+}
+
+#mobileNavButton svg {
+  width: 35px;
+}
+
+.mobileNavList {
+  display: none;
+}
+
+@media screen and (max-width: 1274px) {
+  nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .navList {
+    display: none;
+  }
+
+  #mobileNavButton {
+    display: block;
+    margin-right: 2em;
+  }
+
+  #mobileNavDiv {
+    width: 90vw;
+    text-align: right;
+  }
+
+  .mobileNavList {
+    margin: 1em 2em;
+  }
+
+  .mobileNavItem {
+    margin: 5px 0px;
+  }
+
+  .mobileNavItem a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: var(--font-nav);
+
+
+    /* "Animated" Underline */
+    display: inline-block;
+    padding-bottom:2px;
+    background-image: linear-gradient(var(--primary) 0 0);
+    background-position: 0 100%; /*OR bottom left*/
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    transition:
+      background-size 0.3s,
+      background-position 0s 0.3s;
+  }
+
+  .mobileNavItem a:hover {
+    background-position: 100% 100%; /*OR bottom right*/
+    background-size: 100% 2px;
+  }
+}
+
+/* Footer */
 footer {
   display: grid;
   row-gap: 20px;
+  grid-template: 
+    "fName fName fName"
+    "fSocials fCopy fEmail";
   grid-template-columns: repeat(3, 1fr);
   bottom: 0;
   width: 90vw;
@@ -134,6 +212,35 @@ footer {
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
+@media screen and (max-width: 600px) {
+  footer {
+    grid-template: 
+      "fName fName"
+      "fSocials fSocials"
+      "fCopy fEmail";
+    grid-template-columns: auto;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  footer {
+    grid-template: 
+      "fName"
+      "fSocials"
+      "fEmail"
+      "fCopy";
+    grid-template-columns: auto;
+  }
+}
+
+#fNameBox {grid-area: fName;}
+
+#fSocialsBox {grid-area: fSocials;}
+
+#fCopyBox {grid-area: fCopy;}
+
+#fEmailBox {grid-area: fEmail;}
 
 .footerBox {
   display: flex;
@@ -173,6 +280,7 @@ svg {
   width: 40px;
 }
 
+/* Main Section Styling */
 main {
   display: flex;
   flex-direction: column;
@@ -192,6 +300,7 @@ article {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+/* Profile */
 #profile {
   display: grid;
   grid-template:
@@ -224,11 +333,13 @@ article {
 #profileName {
   font-size: 3em;
   font-weight: var(--font-bold);
+  text-align: center;
 }
 
 #profileJob {
   font-size: 1.5em;
   font-weight: var(--font-light);
+  text-align: center;
 }
 
 #profSocial {
@@ -293,6 +404,17 @@ article {
   }
 }
 
+@media screen and (max-width: 398px) {
+  #profile {
+    grid-template:
+      "profPic"
+      "name"
+      "social"
+      "resume";
+    row-gap: 15px;
+  }
+}
+
 #aboutMe {
   display: flex;
   flex-direction: column;
@@ -303,14 +425,19 @@ article {
   margin-bottom: 30px;
 }
 
+/* Education */
 #education {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#education h2 {
+#education h2:first-of-type {
   margin-bottom: 15px;
+}
+
+#education h2 {
+  text-align: center;
 }
 
 #educationGrid {
@@ -322,12 +449,33 @@ article {
   grid-template-columns: 1fr 2fr;
 }
 
+@media screen and (max-width: 944px) {
+  #educationGrid {
+    grid-template: 
+      "eduPic"
+      "eduDetails"
+      "communityInvolvement";
+    row-gap: 15px;
+    grid-template-columns: auto;
+  }
+  #eduPicArea {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 #eduPicArea {
   grid-area: eduPic;
 }
 
 #eduPicArea img {
   width: 25em;
+}
+
+@media screen and (max-width: 570px) {
+  #eduPicArea img {
+    width: 12em;
+  }
 }
 
 #eduDetailsArea {
@@ -343,23 +491,49 @@ article {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 #communityInvolvementCards {
   margin-top: 15px;
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+  display: grid;
+  grid-template: 
+    "pma mrd pep";
+  column-gap: 3em;
+}
+
+#pmaCard { grid-area: pma; }
+
+#mrdCard { grid-area: mrd; }
+
+#pepCard { grid-area: pep; }
+
+@media screen and (max-width: 944px) {
+  #communityInvolvementCards {
+    grid-template: 
+      "pma mrd"
+      "pep pep";
+    row-gap: 3em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #communityInvolvementCards {
+    grid-template: 
+      "pma"
+      "mrd"
+      "pep";
+  }
 }
 
 .involvementCard {
-  width: 25%;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.25);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
   transition: 0.3s;
+  padding-top: 20px;
 }
 
 .involvementCard:hover {
@@ -395,6 +569,7 @@ article {
   max-height: 1000px;
 }
 
+/* Experience */
 #experience {
   display: flex;
   flex-direction: column;
@@ -405,17 +580,28 @@ article {
   display: grid;
   grid-template: 
     "fast sluhn";
-  column-gap: 5em;
+  column-gap: 2em;
+}
+
+@media screen and (max-width: 1014px) {
+  #experienceGrid {
+    display: grid;
+    grid-template: 
+      "fast"
+      "sluhn";
+    row-gap: 2em;
+  }
 }
 
 .expCard {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   background-color: rgba(0, 0, 0, 0.25);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
   transition: 0.3s;
-  padding: 2px 16px;
+  padding: 20px 16px;
 }
 
 .expCardTitle {
