@@ -659,7 +659,7 @@ article {
     "python c java"
     "rubyLang rust js"
     "html sql git"
-    "agile agile agile";
+    "agile linux null";
   gap: 15px;
   text-align: center;
   align-items: flex-end;
@@ -672,7 +672,7 @@ article {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: rgba(0, 0, 0, 0.25);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
   transition: 0.3s;
@@ -703,3 +703,30 @@ article {
 #sqlCardSwe { grid-area: sql; }
 #gitCardSwe { grid-area: git; }
 #agileCardSwe { grid-area: agile; }
+#linuxCardSwe {grid-area: linux;}
+
+#cyberSkills {
+  text-align: center;
+}
+
+#cyberSkillGridArea {
+  display: grid;
+  grid-template: 
+    "pythonCy wireshark kql"
+    "mxdr siem ssl"
+    "phish snort kLinux";
+  gap: 15px;
+  text-align: center;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+#pythonCardCyber { grid-area: pythonCy; }
+#wiresharkCardCyber { grid-area: wireshark; }
+#kqlCardCyber { grid-area: kql; }
+#mxdrCardCyber { grid-area: mxdr; }
+#siemCardCyber { grid-area: siem; }
+#sslCardCyber { grid-area: ssl; }
+#phishCardCyber { grid-area: phish; }
+#snortCardCyber { grid-area: snort; }
+#linuxCardCyber { grid-area: kLinux; }
