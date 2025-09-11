@@ -11,11 +11,12 @@
 
   /* Font & Typography */
   --body-font: 'Poppins', sans-serif;
-  --h1-font-size: 1.5rem;
-  --h2-font-size: 1.25rem;
-  --h3-font-size: 1rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
+  --page-title-font-size: 3rem;
+  --h1-font-size: 2rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: .85rem;
   --smaller-font-size: .75rem;
 
   /* Font Weight */
@@ -52,6 +53,10 @@ a {
   font-size: var(--normal-font-size);
 }
 
+br {
+  margin: 1em 0px;
+}
+
 body {
   min-height: 100vh;
   background-image: linear-gradient(#061134, #061134, #061134, var(--primary-dark));
@@ -86,7 +91,7 @@ header {
 }
 
 .logo p {
-  font-size: var(--h1-font-size);
+  font-size: var(--h2-font-size);
   font-weight: var(--font-bold);
 }
 
@@ -103,7 +108,7 @@ nav {
 .navItem a{
   text-decoration: none;
   color:var(--text-light);
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: var(--font-nav);
 
   /* "Animated" Underline */
@@ -323,6 +328,12 @@ article {
   overflow: hidden;
 }
 
+#profileImage img {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+
 #profileInfoBox {
   grid-area: name;
   display: flex;
@@ -331,13 +342,13 @@ article {
 }
 
 #profileName {
-  font-size: 3em;
+  font-size: var(--page-title-font-size);
   font-weight: var(--font-bold);
   text-align: center;
 }
 
 #profileJob {
-  font-size: 1.5em;
+  font-size: var(--h2-font-size);
   font-weight: var(--font-light);
   text-align: center;
 }
@@ -383,12 +394,6 @@ article {
 #downloadResume:hover {
   border-color: var(--primary-dark);
   background-color: var(--primary-dark);
-}
-
-#profileImage img {
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover; 
 }
 
 @media screen and (max-width: 1000px) {
@@ -629,3 +634,72 @@ article {
 #sluhnCard {
   grid-area: sluhn;
 }
+
+#sweAbout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#sweAbout img{
+  width: 10em;
+}
+
+#sweAbout h1 {
+  text-align: center;
+}
+
+#sweSkills {
+  text-align: center;
+}
+
+#sweSkillGridArea {
+  display: grid;
+  grid-template: 
+    "python c java"
+    "rubyLang rust js"
+    "html sql git"
+    "agile agile agile";
+  gap: 15px;
+  text-align: center;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.skillCard {
+  height: 15em;
+  width: 15em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  transition: 0.3s;
+  padding: 20px 16px;
+}
+
+.skillCard:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+  cursor: pointer;
+}
+
+.skillCard img {
+  width: 7.5em;
+}
+
+#cssHtmlLogos {
+  display: flex;
+  justify-content: space-around;
+}
+
+#pythonCardSwe { grid-area: python; }
+#cCardSwe { grid-area: c; }
+#javaCardSwe { grid-area: java; }
+#rubyCardSwe { grid-area: rubyLang; }
+#rustCardSwe { grid-area: rust; }
+#jsCardSwe { grid-area: js; }
+#htmlCssCardSwe { grid-area: html; }
+#sqlCardSwe { grid-area: sql; }
+#gitCardSwe { grid-area: git; }
+#agileCardSwe { grid-area: agile; }
