@@ -377,7 +377,7 @@ article {
   align-items: center;
 }
 
-#downloadResume {
+.downloadButton {
   padding: 10px 15px;
   border: solid;
   border-color: var(--primary);
@@ -391,7 +391,7 @@ article {
   transition: 0.3s;
 }
 
-#downloadResume:hover {
+.downloadButton:hover {
   border-color: var(--primary-dark);
   background-color: var(--primary-dark);
 }
@@ -428,6 +428,7 @@ article {
 
 .articTitle {
   margin-bottom: 30px;
+  text-align: center;
 }
 
 /* Education */
@@ -504,7 +505,7 @@ article {
   display: grid;
   grid-template: 
     "pma mrd pep";
-  column-gap: 3em;
+  column-gap: 2em;
 }
 
 #pmaCard { grid-area: pma; }
@@ -518,7 +519,7 @@ article {
     grid-template: 
       "pma mrd"
       "pep pep";
-    row-gap: 3em;
+    row-gap: 2em;
   }
 }
 
@@ -660,7 +661,7 @@ article {
     "rubyLang rust js"
     "html sql git"
     "agile linux null";
-  gap: 15px;
+  gap: 2em;
   text-align: center;
   align-items: flex-end;
   justify-content: center;
@@ -715,7 +716,7 @@ article {
     "pythonCy wireshark kql"
     "mxdr siem ssl"
     "phish snort kLinux";
-  gap: 15px;
+  gap: 2em;
   text-align: center;
   align-items: flex-end;
   justify-content: center;
@@ -730,3 +731,91 @@ article {
 #phishCardCyber { grid-area: phish; }
 #snortCardCyber { grid-area: snort; }
 #linuxCardCyber { grid-area: kLinux; }
+
+#cyberCerts h1 {
+  text-align: center;
+}
+
+#certsGrid {
+  display: grid;
+  grid-template: 
+    "jmuCert secPlus"
+    "netPlus netPlus";
+  gap: 2em;
+}
+
+#certsGrid h2 {
+  text-align: center;
+}
+
+#jmuCertCard {grid-area: jmuCert;}
+#secPlusCard {grid-area: secPlus;}
+#networkPlusCard {grid-area: netPlus;}
+
+.certCard img {
+  width: 10em;
+}
+
+.certCard img, .certCard h2, .certCard p, .downloadButtonDiv, .certCard ul {
+  margin: 15px;
+}
+
+#cyberProjectsGrid {
+  display: grid;
+  grid-template: 
+    "hack packet"
+    "enc enc";
+  gap: 2em;
+}
+
+#cyberProjectsGrid h2 {
+  text-align: center;
+}
+
+#cyberProjectsGrid ul {
+  list-style: circle;
+}
+
+#cyberProjectsGrid li {
+  color: var(--text-light);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+#cyberProjectsGrid img {
+  width: 7em;
+}
+
+#ethicalHackingProject { grid-area: hack; }
+#packetAnalyzerProject { grid-area: packet; }
+#fileEncryptProject { grid-area: enc; }
+
+#sweProjectsGrid {
+  display: grid;
+  grid-template: 
+    "sarr jmuvies"
+    "portfolio portfolio";
+  gap: 2em;
+}
+
+#sarrProject {grid-area: sarr;}
+#jmuviesProject {grid-area: jmuvies;}
+#personalPortfolioProject {grid-area: portfolio;}
+
+#sweProjectsGrid h2 {
+  text-align: center;
+}
+
+#sweProjectsGrid ul {
+  list-style: circle;
+}
+
+#sweProjectsGrid li {
+  color: var(--text-light);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+#sweProjectsGrid img {
+  width: 7em;
+}
