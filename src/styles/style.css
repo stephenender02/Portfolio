@@ -565,16 +565,6 @@ article {
   text-align: center;
 }
 
-.cardExpand {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.75s ease;
-}
-
-.involvementCard.active .cardExpand {
-  max-height: 1000px;
-}
-
 /* Experience */
 #experience {
   display: flex;
@@ -630,6 +620,14 @@ article {
 
 #fastCard {
   grid-area: fast;
+}
+
+#fastCard li {
+  margin-left: 2em;
+  color: var(--text-light);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  list-style: circle;
 }
 
 #sluhnCard {
