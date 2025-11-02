@@ -11,7 +11,6 @@ let headerContent = `
         <li class="navItem""><a href="index.html">Overview</a></li>
         <li class="navItem"><a href="SoftwareEngAndAppDev/index.html">Software Engineering and Application Development</a></li>
         <li class="navItem"><a href="CybersecurityAndNetworking/index.html">Cybersecurity and Computer Networking</a></li>
-        <li class="navItem"><a href="Blog/index.html">Blog</a></li>
       </ul>
 
       <button id="mobileNavButton">
@@ -31,7 +30,6 @@ let mobileNavContent = `
     <li class="mobileNavItem""><a href="index.html">Overview</a></li>
     <li class="mobileNavItem"><a href="SoftwareEngAndAppDev/index.html">Software Engineering and Application Development</a></li>
     <li class="mobileNavItem"><a href="CybersecurityAndNetworking/index.html">Cybersecurity and Computer Networking</a></li>
-    <li class="mobileNavItem"><a href="Blog/index.html">Blog</a></li>
   </ul>
 `;
 mobileDiv.innerHTML = mobileNavContent;
@@ -49,38 +47,39 @@ if (path == '/src/index.html') {
   allNavLinks[0].setAttribute('href', '../index.html');
   allNavLinks[1].setAttribute('href', 'index.html');
   allNavLinks[2].setAttribute('href', '../CybersecurityAndNetworking/index.html');
-  allNavLinks[3].setAttribute('href', '../Blog/index.html');
+  // allNavLinks[3].setAttribute('href', '../Blog/index.html');
   
   allMobileNavLinks[1].style.fontWeight = "700";
   allMobileNavLinks[0].setAttribute('href', '../index.html');
   allMobileNavLinks[1].setAttribute('href', 'index.html');
   allMobileNavLinks[2].setAttribute('href', '../CybersecurityAndNetworking/index.html');
-  allMobileNavLinks[3].setAttribute('href', '../Blog/index.html');
+  // allMobileNavLinks[3].setAttribute('href', '../Blog/index.html');
 } else if (path == '/src/CybersecurityAndNetworking/index.html') {
   allNavLinks[2].style.fontWeight = "700"; 
   allNavLinks[0].setAttribute('href', '../index.html');
   allNavLinks[1].setAttribute('href', '../SoftwareEngAndAppDev/index.html');
   allNavLinks[2].setAttribute('href', 'index.html');
-  allNavLinks[3].setAttribute('href', '../Blog/index.html');
+  // allNavLinks[3].setAttribute('href', '../Blog/index.html');
 
   allMobileNavLinks[2].style.fontWeight = "700"; 
   allMobileNavLinks[0].setAttribute('href', '../index.html');
   allMobileNavLinks[1].setAttribute('href', '../SoftwareEngAndAppDev/index.html');
   allMobileNavLinks[2].setAttribute('href', 'index.html');
-  allMobileNavLinks[3].setAttribute('href', '../Blog/index.html');
-} else if (path == '/src/Blog/index.html') {
-  allNavLinks[3].style.fontWeight = "700";
-  allNavLinks[0].setAttribute('href', '../index.html');
-  allNavLinks[1].setAttribute('href', '../SoftwareEngAndAppDev/index.html');
-  allNavLinks[2].setAttribute('href', '../CybersecurityAndNetworking/index.html');
-  allNavLinks[3].setAttribute('href', 'index.html');
+  // allMobileNavLinks[3].setAttribute('href', '../Blog/index.html');
+} 
+// else if (path == '/src/Blog/index.html') {
+//   allNavLinks[3].style.fontWeight = "700";
+//   allNavLinks[0].setAttribute('href', '../index.html');
+//   allNavLinks[1].setAttribute('href', '../SoftwareEngAndAppDev/index.html');
+//   allNavLinks[2].setAttribute('href', '../CybersecurityAndNetworking/index.html');
+//   allNavLinks[3].setAttribute('href', 'index.html');
 
-  allMobileNavLinks[3].style.fontWeight = "700";
-  allMobileNavLinks[0].setAttribute('href', '../index.html');
-  allMobileNavLinks[1].setAttribute('href', '../SoftwareEngAndAppDev/index.html');
-  allMobileNavLinks[2].setAttribute('href', '../CybersecurityAndNetworking/index.html');
-  allMobileNavLinks[3].setAttribute('href', 'index.html');
-}
+//   allMobileNavLinks[3].style.fontWeight = "700";
+//   allMobileNavLinks[0].setAttribute('href', '../index.html');
+//   allMobileNavLinks[1].setAttribute('href', '../SoftwareEngAndAppDev/index.html');
+//   allMobileNavLinks[2].setAttribute('href', '../CybersecurityAndNetworking/index.html');
+//   allMobileNavLinks[3].setAttribute('href', 'index.html');
+// }
 
 let mobileNavButton = document.getElementById('mobileNavButton');
   mobileNavButton.addEventListener('click', () => {

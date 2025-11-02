@@ -144,7 +144,7 @@ nav {
   display: none;
 }
 
-@media screen and (max-width: 1274px) {
+@media screen and (max-width: 1210px) {
   nav {
     display: flex;
     justify-content: flex-end;
@@ -378,7 +378,7 @@ article {
 }
 
 .downloadButton {
-  padding: 10px 15px;
+  padding: 0.5em 1em;
   border: solid;
   border-color: var(--primary);
   border-radius: 20px;
@@ -514,7 +514,7 @@ article {
 
 #pepCard { grid-area: pep; }
 
-@media screen and (max-width: 1550px) {
+@media screen and (max-width: 1250px) {
   #communityInvolvementCards {
     grid-template: 
       "pma mrd"
@@ -523,7 +523,7 @@ article {
   }
 }
 
-@media screen and (max-width: 1030px) {
+@media screen and (max-width: 950px) {
   #communityInvolvementCards {
     grid-template: 
       "pma"
@@ -608,7 +608,7 @@ article {
   color: var(--text-light);
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  list-style: circle;
+  list-style: disc;
 }
 
 #sluhnCard {
@@ -650,7 +650,7 @@ article {
   justify-content: center;
 }
 
-@media screen and (max-width: 1550px) {
+@media screen and (max-width: 1250px) {
   #sweSkillGridArea {
     grid-template: 
       "python c"
@@ -663,7 +663,7 @@ article {
   }
 }
 
-@media screen and (max-width: 1030px) {
+@media screen and (max-width: 950px) {
   #sweSkillGridArea {
     grid-template: 
       "python"
@@ -681,8 +681,8 @@ article {
 }
 
 .skillCard {
-  height: 22em;
-  width: 22em;
+  height: 28em;
+  width: 17em;
   background-color: transparent;
   perspective: 1000px;
 }
@@ -764,34 +764,33 @@ article {
   display: grid;
   grid-template: 
     "pythonCy wireshark kql"
-    "mxdr siem ssl"
-    "phish snort kLinux";
+    "mxdr ssl phish"
+    "snort kLinux null";
   gap: 2em;
   text-align: center;
   align-items: flex-end;
   justify-content: center;
 }
 
-@media screen and (max-width: 1550px) {
+@media screen and (max-width: 1250px) {
   #cyberSkillGridArea {
     grid-template: 
       "pythonCy wireshark"
       "kql mxdr"
-      "siem ssl"
+      "ssl phish"
       "phish snort"
       "kLinux null";
     row-gap: 2em;
   }
 }
 
-@media screen and (max-width: 1030px) {
+@media screen and (max-width: 950px) {
   #cyberSkillGridArea {
     grid-template: 
       "pythonCy"
       "wireshark"
       "kql"
       "mxdr"
-      "siem"
       "ssl"
       "phish"
       "snort"
@@ -803,7 +802,6 @@ article {
 #wiresharkCardCyber { grid-area: wireshark; }
 #kqlCardCyber { grid-area: kql; }
 #mxdrCardCyber { grid-area: mxdr; }
-#siemCardCyber { grid-area: siem; }
 #sslCardCyber { grid-area: ssl; }
 #phishCardCyber { grid-area: phish; }
 #snortCardCyber { grid-area: snort; }
@@ -819,6 +817,15 @@ article {
     "jmuCert secPlus"
     "netPlus netPlus";
   gap: 2em;
+}
+
+@media screen and (max-width: 1200px) {
+  #certsGrid {
+    grid-template: 
+      "jmuCert"
+      "secPlus"
+      "netPlus";
+  }
 }
 
 #certsGrid h2 {
@@ -845,15 +852,26 @@ article {
   gap: 2em;
 }
 
+
+@media screen and (max-width: 1200px) {
+  #cyberProjectsGrid {
+    grid-template: 
+      "hack"
+      "packet"
+      "enc";
+  }
+}
+
 #cyberProjectsGrid h2 {
   text-align: center;
 }
 
 #cyberProjectsGrid ul {
-  list-style: circle;
+  list-style: disc;
 }
 
 #cyberProjectsGrid li {
+  margin-left: 2em;
   color: var(--text-light);
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
@@ -875,6 +893,15 @@ article {
   gap: 2em;
 }
 
+@media screen and (max-width: 1000px) {
+  #sweProjectsGrid {
+    grid-template: 
+      "sarr"
+      "jmuvies"
+      "portfolio";
+  }
+}
+
 #sarrProject {grid-area: sarr;}
 #jmuviesProject {grid-area: jmuvies;}
 #personalPortfolioProject {grid-area: portfolio;}
@@ -884,10 +911,11 @@ article {
 }
 
 #sweProjectsGrid ul {
-  list-style: circle;
+  list-style: disc;
 }
 
 #sweProjectsGrid li {
+  margin-left: 2em;
   color: var(--text-light);
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
