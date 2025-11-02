@@ -652,6 +652,10 @@ article {
   text-align: center;
 }
 
+#sweSkills > p {
+  margin-bottom: 2em;
+}
+
 #sweSkillGridArea {
   display: grid;
   grid-template: 
@@ -668,22 +672,48 @@ article {
 .skillCard {
   height: 15em;
   width: 15em;
+  background-color: transparent;
+  /* padding: 20px 16px; */
+  perspective: 1000px;
+}
+
+.skillCardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.skillCard:hover .skillCardInner {
+  transform: rotateY(180deg);
+}
+
+.skillCardFront, .skillCardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.skillCardFront {
+  background-color: rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  background-color: rgba(0, 0, 0, 0.25);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
-  transition: 0.3s;
-  padding: 20px 16px;
 }
 
-.skillCard:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
-  cursor: pointer;
+.skillCardBack {
+  background-color: rgba(0, 0, 0, 0.836);
+  color: white;
+  transform: rotateY(180deg);
 }
 
-.skillCard img {
+.skillCardFront img {
   width: 7.5em;
 }
 
@@ -706,6 +736,10 @@ article {
 
 #cyberSkills {
   text-align: center;
+}
+
+#cyberSkills > p {
+  margin-bottom: 2em;
 }
 
 #cyberSkillGridArea {
